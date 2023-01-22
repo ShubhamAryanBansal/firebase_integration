@@ -58,7 +58,7 @@ class FirebaseRepositoryImpl implements FirebaseRepository{
   showToast('Something went wrong!',warning: true,centerGravity: true);
   return false;
   } on Exception catch(e, stacktrace){
-    print('*******signupExc : ${e.toString()}');
+    print('******signupExc : ${e.toString()}');
     //print(stacktrace);
     showToast('Something went wrong! Please try again later',warning: true,centerGravity: true);
     return false;
