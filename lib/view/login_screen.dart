@@ -92,6 +92,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     );
   }
 
+  ///here [isLoading] indicates to button state whether
+  ///to show text or loading_indicator inside it.
   Widget _buildSubmitButton(BuildContext context,bool isLoading) {
 
     return Align(
@@ -112,6 +114,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
               )),
         ),
         onTap: () async {
+
 
           if(!isLoading){
             bool isValid = ref.watch(loginFormProvider.select((value) => value.formState.isValid));

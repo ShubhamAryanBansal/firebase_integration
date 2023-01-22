@@ -73,10 +73,12 @@ class SignupFormProvider extends StateNotifier<SignupForm> {
 
   }
 
+  ///Used for toggling button state to show loader instead of text inside button
   toggleButtonState(bool newState){
     state = state.copyWith(formState: _form.copyWith(buttonState: newState));
   }
 
+  ///Calling firebase_repo for signup
   Future<bool> signupUser({required final String name, required final String email, required final String password}) async{
 
     toggleButtonState(true);

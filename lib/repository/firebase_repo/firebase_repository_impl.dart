@@ -10,14 +10,15 @@ import 'package:pingo_learn_assignment/repository/firebase_repo/firebase_reposit
 import '../../network/exception.dart';
 import '../../widgets/toast.dart';
 
-final firebaseRepositoryProvider = Provider<FirebaseRepository>((ref) => FirebaseRepositoryImpl(ref.read,FirebaseAuth.instance));
+final firebaseRepositoryProvider = Provider<FirebaseRepository>((ref) => FirebaseRepositoryImpl(ref.read,FirebaseAuth.instance,FirebaseRemoteConfig.instance));
 
 class FirebaseRepositoryImpl implements FirebaseRepository{
 
   final Reader read;
   final FirebaseAuth _firebaseAuth;
+  final FirebaseRemoteConfig _remoteConfig;
 
-  FirebaseRepositoryImpl(this.read,this._firebaseAuth);
+  FirebaseRepositoryImpl(this.read,this._firebaseAuth,this._remoteConfig);
 
 
   @override
@@ -75,7 +76,7 @@ class FirebaseRepositoryImpl implements FirebaseRepository{
       }
 
       await _firebaseAuth.signInWithEmailAndPassword(email: email, password: password,).timeout(const Duration(seconds: 10),onTimeout: (){throw Exception();});
-      showToast('Welcome bud!',centerGravity: true,warning: false);
+      showToast('Welcome bud!',warning: false);
       return true;
     } on FirebaseAuthException catch (e, stacktrace) {
       print('*******FirebaseAuthException : ${e.code} | $e');
@@ -115,11 +116,11 @@ class FirebaseRepositoryImpl implements FirebaseRepository{
         throw DataException.customException('noInternet');
       }
 
-      final FirebaseRemoteConfig remoteConfig = FirebaseRemoteConfig.instance;
-      remoteConfig.setConfigSettings(RemoteConfigSettings(fetchTimeout: const Duration(seconds: 10), minimumFetchInterval: const Duration(minutes: 1)));
-      await remoteConfig.fetchAndActivate();
+      ///Remote configuration can be set according to the requirement
+      _remoteConfig.setConfigSettings(RemoteConfigSettings(fetchTimeout: const Duration(seconds: 10), minimumFetchInterval: const Duration(minutes: 1)));
+      await _remoteConfig.fetchAndActivate();
 
-      return remoteConfig.getString('countryCode');
+      return _remoteConfig.getString('countryCode');
 
     }on Exception catch(e,stacktrace){
       print('******remoteConfigExc ${e.toString()}');

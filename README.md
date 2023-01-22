@@ -1,16 +1,18 @@
 # pingo_learn_assignment
 
-A new Flutter project.
+A sample app demonstrating implementation of different types of services provided by firebase.
+-> FirebaseAuth
+-> FireStore
+-> Firebase Remote Config
 
-## Getting Started
+**This project is built on flutter version 3.0**
 
-This project is a starting point for a Flutter application.
+->Implemented Riverpod (A better provider) state management technique and tried to follow domain driven architecture. Keeping the UI layer || provider layer || repository layer separate.
 
-A few resources to get you started if this is your first Flutter project:
+#Dio is used as networking library. 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Few enhancements which can be done in future :- 
+1. Checking if the user is logged in or not.
+2. Logging out of the user.
+3. Making obscure password field.
+4. Adding clear text in textField as a suffix icon.

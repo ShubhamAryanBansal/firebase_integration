@@ -7,6 +7,8 @@ import 'package:pingo_learn_assignment/widgets/toast.dart';
 
 import '../../model/form/field.dart';
 import '../../model/form/login_model/login_entity.dart';
+
+
 final loginFormProvider = StateNotifierProvider.autoDispose<LoginFormProvider, LoginForm>((ref) {
   return LoginFormProvider(ref.read);
 });
@@ -55,11 +57,12 @@ class LoginFormProvider extends StateNotifier<LoginForm> {
 
   }
 
+  ///Used for toggling button state to show loader instead of text inside button
   toggleButtonState(bool newState){
     state = state.copyWith(formState: _form.copyWith(buttonState: newState));
   }
 
-
+  ///Calling firebase_repo for login
   Future<bool> loginUser({required final String email, required final String password}) async{
 
     toggleButtonState(true);

@@ -24,8 +24,8 @@ class NewsViewModel extends StateNotifier<State<NewsList>> {
   _getAllNews() async {
     try {
       state = const State.loading();
-      final countryCode = await read(firebaseRepositoryProvider).getRemoteConfig();
-      final gemsList = await read(pingoLearnApiProvider).getNews(countryCode);
+      final countryCode = await read(firebaseRepositoryProvider).getRemoteConfig(); //fetching countryCode
+      final gemsList = await read(pingoLearnApiProvider).getNews(countryCode); //fetching news of that countryCode
       state = State.success(gemsList);
     } on Exception catch (e, stacktrace) {
       state = State.error(e);

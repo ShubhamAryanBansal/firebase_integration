@@ -6,9 +6,6 @@ import 'package:intl/intl.dart';
 
 class AppUtils{
 
-  //static final DateFormat publishedAtFormat = DateFormat('yyyy-MM-ddTHH:mm:ssZ');
-
-
   ///Usually the timestamp which comes in api is in utc
   /// but considering to be in local for now
   static String publishedAt(DateTime apiDate){
