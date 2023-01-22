@@ -6,13 +6,12 @@ import 'package:intl/intl.dart';
 
 class AppUtils{
 
-  ///Usually the timestamp which comes in api is in utc
-  /// but considering to be in local for now
+  ///Considering the timestamp which is coming in api is in UTC.
   static String publishedAt(DateTime apiDate){
 
     String delay = '';
 
-    var currentTime = DateTime.now();
+    var currentTime = DateTime.now().toUtc();
 
     var inMinutes = currentTime.difference(apiDate).inMinutes;
     var inHours = currentTime.difference(apiDate).inHours;
