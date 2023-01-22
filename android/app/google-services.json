@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "264084878599",
+    "project_id": "pingolearnassignment-7130c",
+    "storage_bucket": "pingolearnassignment-7130c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:264084878599:android:31fffd8a6dd0e3198041a2",
+        "android_client_info": {
+          "package_name": "com.example.pingo_learn_assignment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "264084878599-fbnbfrph349516595s9u5fbnll9acjet.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSoLI_HFHhZtrlpxYmj_d3dBQdloehE_s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "264084878599-fbnbfrph349516595s9u5fbnll9acjet.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
