@@ -6,9 +6,9 @@ A sample app demonstrating implementation of different types of services provide
 -> Firebase Remote Config
 
 
-# ->Implemented Riverpod (A better provider) state management technique and tried to follow domain driven architecture. Keeping the UI layer || provider layer || repository layer separate.
+**Implemented Riverpod (A better provider) state management technique and tried to follow domain driven architecture. Keeping the UI layer || provider layer || repository layer separate.**
 
-**Dio is used as networking library.** 
+Dio is used as networking library.
 
 Few enhancements which can be done in future :- 
 1. Checking if the user is logged in or not.
