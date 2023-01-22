@@ -75,7 +75,7 @@ class _NewsState extends ConsumerState<NewsListView> {
       actions: [
        TextButton.icon(onPressed: (){},
            icon: const Icon(
-              Icons.location_on_outlined,
+              Icons.near_me,
               size: 22,
               color: textFieldColor,
               ),
