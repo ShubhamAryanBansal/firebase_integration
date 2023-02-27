@@ -10,6 +10,7 @@ A sample app demonstrating implementation of different types of services provide
 
 Dio is used as networking library.
 
+
 Few enhancements which can be done in future :- 
 1. Checking if the user is logged in or not.
 2. Logging out of the user.

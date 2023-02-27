@@ -1,7 +1,7 @@
 
 import 'package:dio/dio.dart';
 
-import '../widgets/toast.dart';
+import '../custom_shared_widgets/toast.dart';
 
 class DataException implements Exception {
 
